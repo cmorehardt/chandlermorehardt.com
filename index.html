@@ -8,6 +8,11 @@
     name="description"
     content="Official campaign website for Chandler Morehardt for Town Council."
   />
+  <link rel="canonical" href="https://chandlermorehardt.com/" />
+  <meta property="og:title" content="Chandler Morehardt for Town Council" />
+  <meta property="og:description" content="Official campaign website for Chandler Morehardt for Town Council." />
+  <meta property="og:url" content="https://chandlermorehardt.com/" />
+  <meta property="og:type" content="website" />
   <style>
     :root{
       --bg:#f8fafc;
@@ -21,6 +26,7 @@
     }
 
     *{box-sizing:border-box}
+
     body{
       margin:0;
       font-family: Arial, Helvetica, sans-serif;
@@ -43,7 +49,7 @@
 
     .hero-grid{
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
+      grid-template-columns: 1.05fr .95fr;
       gap:40px;
       align-items:center;
     }
@@ -83,39 +89,6 @@
       max-width:640px;
     }
 
-    .button-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-top:30px;
-    }
-
-    .btn{
-      display:inline-block;
-      text-decoration:none;
-      padding:14px 22px;
-      border-radius:16px;
-      font-weight:700;
-      border:2px solid var(--blue);
-      transition:.2s ease;
-    }
-
-    .btn-primary{
-      background:var(--blue);
-      color:#fff;
-    }
-
-    .btn-primary:hover{opacity:.92}
-
-    .btn-secondary{
-      background:#fff;
-      color:var(--blue);
-    }
-
-    .btn-secondary:hover{
-      background:#eff6ff;
-    }
-
     .meta{
       display:flex;
       flex-wrap:wrap;
@@ -132,13 +105,32 @@
       box-shadow:0 10px 30px rgba(15,23,42,.06);
     }
 
+    .hero-side{
+      display:grid;
+      gap:22px;
+    }
+
+    .headshot-card{
+      padding:14px;
+      overflow:hidden;
+    }
+
+    .headshot{
+      display:block;
+      width:100%;
+      aspect-ratio: 4 / 5;
+      object-fit:cover;
+      border-radius:22px;
+      background:#e5e7eb;
+    }
+
     .priority-box{
       padding:18px;
     }
 
     .priority-inner{
       border-radius:24px;
-      padding:34px;
+      padding:30px;
       color:#fff;
       background:linear-gradient(135deg, #2563eb, #0ea5e9, #10b981);
     }
@@ -220,36 +212,6 @@
       color:#cbd5e1;
     }
 
-    .cta{
-      padding-bottom:70px;
-    }
-
-    .cta-wrap{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:28px;
-      padding:34px;
-    }
-
-    .cta-side{
-      background:#f8fafc;
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:24px;
-    }
-
-    .label{
-      font-weight:700;
-      margin-bottom:4px;
-    }
-
-    footer{
-      text-align:center;
-      padding:28px 0 40px;
-      color:#64748b;
-      font-size:14px;
-    }
-
     a.email{
       color:var(--blue);
       text-decoration:none;
@@ -258,7 +220,7 @@
     @media (max-width: 900px){
       h1{font-size:40px}
       h2{font-size:30px}
-      .hero-grid, .three-col, .split, .cta-wrap{
+      .hero-grid, .three-col, .split{
         grid-template-columns:1fr;
       }
     }
@@ -274,25 +236,26 @@
           My family and I are proud to call Silverthorne home. I’m running to help keep our town affordable, family-friendly, and a safe community where locals can thrive.
         </p>
 
-        <div class="button-row">
-          <a class="btn btn-primary" href="mailto:chandler.morehardt@gmail.com?subject=Support%20for%20the%20Campaign">Support the Campaign</a>
-          <a class="btn btn-secondary" href="mailto:chandler.morehardt@gmail.com?subject=I%27d%20Like%20to%20Get%20Involved">Get Involved</a>
-        </div>
-
         <div class="meta">
           <div>📍 Silverthorne, Colorado</div>
           <div>✉️ <a class="email" href="mailto:chandler.morehardt@gmail.com">chandler.morehardt@gmail.com</a></div>
         </div>
       </div>
 
-      <div class="card priority-box">
-        <div class="priority-inner">
-          <div class="eyebrow" style="color: rgba(255,255,255,.8); margin-bottom:6px;">Campaign Priorities</div>
-          <h2 style="margin-bottom:8px;">A stronger future for Silverthorne</h2>
-          <div class="priority-item">✅ Local leadership grounded in community</div>
-          <div class="priority-item">✅ Practical solutions over politics</div>
-          <div class="priority-item">✅ Family-friendly decision making</div>
-          <div class="priority-item">✅ A strong future for locals</div>
+      <div class="hero-side">
+        <div class="card headshot-card">
+          <img src="headshot.jpg" alt="Headshot of Chandler Morehardt" class="headshot" />
+        </div>
+
+        <div class="card priority-box">
+          <div class="priority-inner">
+            <div class="eyebrow" style="color: rgba(255,255,255,.8); margin-bottom:6px;">Campaign Priorities</div>
+            <h2 style="margin-bottom:8px;">A stronger future for Silverthorne</h2>
+            <div class="priority-item">✅ Local leadership grounded in community</div>
+            <div class="priority-item">✅ Practical solutions over politics</div>
+            <div class="priority-item">✅ Family-friendly decision making</div>
+            <div class="priority-item">✅ A strong future for locals</div>
+          </div>
         </div>
       </div>
     </div>
@@ -350,43 +313,5 @@
       </div>
     </div>
   </section>
-
-  <section class="cta">
-    <div class="container card cta-wrap">
-      <div>
-        <div class="eyebrow">Get Involved</div>
-        <h2>Join the campaign</h2>
-        <p>
-          Want to help spread the word, host a conversation, or stay updated? Reach out and be part of building a stronger future for Silverthorne.
-        </p>
-      </div>
-
-      <div class="cta-side">
-        <div style="margin-bottom:16px;">
-          <div class="label">Email</div>
-          <div><a class="email" href="mailto:chandler.morehardt@gmail.com">chandler.morehardt@gmail.com</a></div>
-        </div>
-
-        <div style="margin-bottom:16px;">
-          <div class="label">Community</div>
-          <div>Silverthorne, Colorado</div>
-        </div>
-
-        <div style="margin-bottom:20px;">
-          <div class="label">Volunteer Opportunities</div>
-          <div>Neighborhood outreach, campaign events, digital support, and more.</div>
-        </div>
-
-        <div class="button-row" style="margin-top:0;">
-          <a class="btn btn-primary" href="mailto:chandler.morehardt@gmail.com?subject=Volunteer%20for%20the%20Campaign">Volunteer</a>
-          <a class="btn btn-secondary" href="mailto:chandler.morehardt@gmail.com?subject=Campaign%20Contact">Contact the Campaign</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    Paid for by friends of Chandler Morehardt
-  </footer>
 </body>
 </html>
