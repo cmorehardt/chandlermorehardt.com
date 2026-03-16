@@ -1,191 +1,392 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Mail, MapPin, Heart, Shield, Home, Users, CheckCircle2 } from "lucide-react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chandler Morehardt for Town Council</title>
+  <meta
+    name="description"
+    content="Official campaign website for Chandler Morehardt for Town Council."
+  />
+  <style>
+    :root{
+      --bg:#f8fafc;
+      --text:#0f172a;
+      --muted:#475569;
+      --card:#ffffff;
+      --line:#e2e8f0;
+      --blue:#2563eb;
+      --green:#10b981;
+      --dark:#0f172a;
+    }
 
-export default function TownCouncilCampaignWebsite() {
-  const priorities = [
-    {
-      icon: Home,
-      title: "Keep Silverthorne Affordable",
-      text: "Support practical housing solutions, protect the character of our neighborhoods, and make sure local families can continue to build their lives here.",
-    },
-    {
-      icon: Users,
-      title: "Put Families First",
-      text: "Champion parks, recreation, child-friendly community spaces, and policies that help Silverthorne stay welcoming for working families and young kids.",
-    },
-    {
-      icon: Shield,
-      title: "Support a Safe Community",
-      text: "Invest in thoughtful planning, strong partnerships, and infrastructure that helps neighbors feel safe, connected, and prepared for the future.",
-    },
-  ];
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:linear-gradient(to bottom, #f8fafc, #ffffff, #f1f5f9);
+      line-height:1.6;
+    }
 
-  const values = [
-    "Local leadership grounded in community",
-    "Practical solutions over politics",
-    "Family-friendly decision making",
-    "A strong future for locals",
-  ];
+    .container{
+      width:min(1100px, 92%);
+      margin:0 auto;
+    }
 
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-100 text-slate-900">
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.12),transparent_28%),radial-gradient(circle_at_top_left,rgba(16,185,129,0.10),transparent_30%)]" />
-        <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-24">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="grid items-center gap-10 md:grid-cols-2"
-          >
-            <div>
-              <Badge className="mb-4 rounded-full px-4 py-1 text-sm">Silverthorne Town Council</Badge>
-              <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
-                Chandler Morehardt for Town Council
-              </h1>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-700">
-                My family and I are proud to call Silverthorne home. I’m running to help keep our town affordable, family-friendly, and a safe community where locals can thrive.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button className="rounded-2xl px-6 py-6 text-base">
-                  Support the Campaign
-                </Button>
-                <Button variant="outline" className="rounded-2xl px-6 py-6 text-base">
-                  Get Involved
-                </Button>
-              </div>
-              <div className="mt-8 flex flex-wrap items-center gap-4 text-sm text-slate-600">
-                <div className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4" />
-                  <span>Silverthorne, Colorado</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="h-4 w-4" />
-                  <span>chandler.morehardt@gmail.com</span>
-                </div>
-              </div>
-            </div>
+    .hero{
+      padding:72px 0 48px;
+      background:
+        radial-gradient(circle at top right, rgba(37,99,235,.12), transparent 25%),
+        radial-gradient(circle at top left, rgba(16,185,129,.10), transparent 28%);
+    }
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="relative"
-            >
-              <div className="rounded-[2rem] bg-white p-4 shadow-2xl ring-1 ring-slate-200">
-                <div className="rounded-[1.5rem] bg-gradient-to-br from-blue-600 via-sky-500 to-emerald-500 p-8 text-white">
-                  <p className="text-sm uppercase tracking-[0.25em] text-white/80">Campaign Priorities</p>
-                  <h2 className="mt-3 text-3xl font-semibold">A stronger future for Silverthorne</h2>
-                  <div className="mt-6 space-y-4">
-                    {values.map((value) => (
-                      <div key={value} className="flex items-start gap-3 rounded-2xl bg-white/10 p-4 backdrop-blur-sm">
-                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" />
-                        <p className="text-sm leading-6">{value}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .badge{
+      display:inline-block;
+      background:#e2e8f0;
+      color:#334155;
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+
+    h1{
+      font-size:56px;
+      line-height:1.05;
+      margin:0;
+    }
+
+    h2{
+      font-size:38px;
+      line-height:1.15;
+      margin:0 0 16px;
+    }
+
+    h3{
+      font-size:24px;
+      margin:0 0 10px;
+    }
+
+    p.lead{
+      font-size:21px;
+      color:var(--muted);
+      margin:24px 0 0;
+      max-width:640px;
+    }
+
+    .button-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      padding:14px 22px;
+      border-radius:16px;
+      font-weight:700;
+      border:2px solid var(--blue);
+      transition:.2s ease;
+    }
+
+    .btn-primary{
+      background:var(--blue);
+      color:#fff;
+    }
+
+    .btn-primary:hover{opacity:.92}
+
+    .btn-secondary{
+      background:#fff;
+      color:var(--blue);
+    }
+
+    .btn-secondary:hover{
+      background:#eff6ff;
+    }
+
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:24px;
+      margin-top:28px;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:28px;
+      box-shadow:0 10px 30px rgba(15,23,42,.06);
+    }
+
+    .priority-box{
+      padding:18px;
+    }
+
+    .priority-inner{
+      border-radius:24px;
+      padding:34px;
+      color:#fff;
+      background:linear-gradient(135deg, #2563eb, #0ea5e9, #10b981);
+    }
+
+    .priority-item{
+      background:rgba(255,255,255,.12);
+      border-radius:18px;
+      padding:14px 16px;
+      margin-top:14px;
+      backdrop-filter: blur(3px);
+    }
+
+    section{
+      padding:22px 0 40px;
+    }
+
+    .three-col{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:24px;
+    }
+
+    .issue{
+      padding:28px;
+    }
+
+    .icon{
+      width:48px;
+      height:48px;
+      border-radius:16px;
+      background:#f1f5f9;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+      margin-bottom:18px;
+    }
+
+    .issue p{
+      color:var(--muted);
+      margin:0;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:28px;
+    }
+
+    .bio{
+      padding:34px;
+    }
+
+    .eyebrow{
+      font-size:13px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#64748b;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    .quote-card{
+      background:var(--dark);
+      color:#fff;
+      padding:34px;
+      border-radius:28px;
+      box-shadow:0 10px 30px rgba(15,23,42,.12);
+    }
+
+    blockquote{
+      margin:18px 0 0;
+      font-size:28px;
+      line-height:1.4;
+      font-weight:700;
+    }
+
+    .quote-card p{
+      color:#cbd5e1;
+    }
+
+    .cta{
+      padding-bottom:70px;
+    }
+
+    .cta-wrap{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      padding:34px;
+    }
+
+    .cta-side{
+      background:#f8fafc;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:24px;
+    }
+
+    .label{
+      font-weight:700;
+      margin-bottom:4px;
+    }
+
+    footer{
+      text-align:center;
+      padding:28px 0 40px;
+      color:#64748b;
+      font-size:14px;
+    }
+
+    a.email{
+      color:var(--blue);
+      text-decoration:none;
+    }
+
+    @media (max-width: 900px){
+      h1{font-size:40px}
+      h2{font-size:30px}
+      .hero-grid, .three-col, .split, .cta-wrap{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">Silverthorne Town Council</div>
+        <h1>Chandler Morehardt for Town Council</h1>
+        <p class="lead">
+          My family and I are proud to call Silverthorne home. I’m running to help keep our town affordable, family-friendly, and a safe community where locals can thrive.
+        </p>
+
+        <div class="button-row">
+          <a class="btn btn-primary" href="mailto:chandler.morehardt@gmail.com?subject=Support%20for%20the%20Campaign">Support the Campaign</a>
+          <a class="btn btn-secondary" href="mailto:chandler.morehardt@gmail.com?subject=I%27d%20Like%20to%20Get%20Involved">Get Involved</a>
         </div>
-      </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-8 md:py-12">
-        <div className="grid gap-6 md:grid-cols-3">
-          {priorities.map((priority, index) => {
-            const Icon = priority.icon;
-            return (
-              <motion.div
-                key={priority.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.15 + index * 0.1 }}
-              >
-                <Card className="h-full rounded-[2rem] border-0 shadow-lg shadow-slate-200/60">
-                  <CardContent className="p-7">
-                    <div className="mb-5 inline-flex rounded-2xl bg-slate-100 p-3">
-                      <Icon className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-xl font-semibold">{priority.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-slate-600">{priority.text}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            );
-          })}
+        <div class="meta">
+          <div>📍 Silverthorne, Colorado</div>
+          <div>✉️ <a class="email" href="mailto:chandler.morehardt@gmail.com">chandler.morehardt@gmail.com</a></div>
         </div>
-      </section>
+      </div>
 
-      <section className="mx-auto max-w-6xl px-6 py-12 md:py-20">
-        <div className="grid gap-8 md:grid-cols-[1.15fr_0.85fr]">
-          <Card className="rounded-[2rem] border-0 shadow-lg shadow-slate-200/60">
-            <CardContent className="p-8 md:p-10">
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-slate-500">Meet Chandler</p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">A local dad invested in Silverthorne’s future</h2>
-              <p className="mt-6 text-base leading-8 text-slate-700">
-                As a local dad with young kids, Chandler understands how much the decisions made today shape the kind of town families experience tomorrow. He believes Silverthorne can grow in a way that stays grounded in local values, supports working families, and preserves what makes this community special.
-              </p>
-              <p className="mt-4 text-base leading-8 text-slate-700">
-                His campaign is focused on listening well, building practical solutions, and helping ensure Silverthorne remains a place where neighbors know each other, children can thrive, and locals have a voice in the future of the town.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="rounded-[2rem] border-0 bg-slate-900 text-white shadow-lg shadow-slate-300/40">
-            <CardContent className="p-8 md:p-10">
-              <div className="flex items-center gap-3 text-slate-300">
-                <Heart className="h-5 w-5" />
-                <p className="text-sm uppercase tracking-[0.2em]">Why I’m Running</p>
-              </div>
-              <blockquote className="mt-6 text-2xl font-semibold leading-10">
-                “I’m running to help keep Silverthorne affordable, family-friendly, and a safe community where locals can thrive.”
-              </blockquote>
-              <p className="mt-6 text-sm leading-7 text-slate-300">
-                This campaign is rooted in community, not noise. It’s about thoughtful leadership, real listening, and making decisions that work for the people who live here year-round.
-              </p>
-            </CardContent>
-          </Card>
+      <div class="card priority-box">
+        <div class="priority-inner">
+          <div class="eyebrow" style="color: rgba(255,255,255,.8); margin-bottom:6px;">Campaign Priorities</div>
+          <h2 style="margin-bottom:8px;">A stronger future for Silverthorne</h2>
+          <div class="priority-item">✅ Local leadership grounded in community</div>
+          <div class="priority-item">✅ Practical solutions over politics</div>
+          <div class="priority-item">✅ Family-friendly decision making</div>
+          <div class="priority-item">✅ A strong future for locals</div>
         </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 pb-12 md:pb-20">
-        <Card className="rounded-[2rem] border-0 bg-white shadow-xl shadow-slate-200/70">
-          <CardContent className="grid gap-8 p-8 md:grid-cols-2 md:p-10">
-            <div>
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-slate-500">Get Involved</p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight">Join the campaign</h2>
-              <p className="mt-4 max-w-lg text-base leading-8 text-slate-700">
-                Want to help spread the word, host a conversation, or stay updated? Reach out and be part of building a stronger future for Silverthorne.
-              </p>
-            </div>
-            <div className="rounded-[1.5rem] bg-slate-50 p-6 ring-1 ring-slate-200">
-              <div className="space-y-4 text-sm text-slate-700">
-                <div>
-                  <p className="font-semibold text-slate-900">Email</p>
-                  <p>chandler.morehardt@gmail.com</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-slate-900">Community</p>
-                  <p>Silverthorne, Colorado</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-slate-900">Volunteer Opportunities</p>
-                  <p>Neighborhood outreach, campaign events, digital support, and more.</p>
-                </div>
-              </div>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Button className="rounded-2xl">Volunteer</Button>
-                <Button variant="outline" className="rounded-2xl">Contact the Campaign</Button>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </section>
+      </div>
     </div>
-  );
-}
+  </header>
+
+  <section>
+    <div class="container three-col">
+      <div class="card issue">
+        <div class="icon">🏠</div>
+        <h3>Keep Silverthorne Affordable</h3>
+        <p>
+          Support practical housing solutions, protect the character of our neighborhoods, and make sure local families can continue to build their lives here.
+        </p>
+      </div>
+
+      <div class="card issue">
+        <div class="icon">👨‍👩‍👧‍👦</div>
+        <h3>Put Families First</h3>
+        <p>
+          Champion parks, recreation, child-friendly community spaces, and policies that help Silverthorne stay welcoming for working families and young kids.
+        </p>
+      </div>
+
+      <div class="card issue">
+        <div class="icon">🛡️</div>
+        <h3>Support a Safe Community</h3>
+        <p>
+          Invest in thoughtful planning, strong partnerships, and infrastructure that helps neighbors feel safe, connected, and prepared for the future.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container split">
+      <div class="card bio">
+        <div class="eyebrow">Meet Chandler</div>
+        <h2>A local dad invested in Silverthorne’s future</h2>
+        <p>
+          As a local dad with young kids, Chandler understands how much the decisions made today shape the kind of town families experience tomorrow. He believes Silverthorne can grow in a way that stays grounded in local values, supports working families, and preserves what makes this community special.
+        </p>
+        <p>
+          His campaign is focused on listening well, building practical solutions, and helping ensure Silverthorne remains a place where neighbors know each other, children can thrive, and locals have a voice in the future of the town.
+        </p>
+      </div>
+
+      <div class="quote-card">
+        <div class="eyebrow" style="color:#cbd5e1;">Why I’m Running</div>
+        <blockquote>
+          “I’m running to help keep Silverthorne affordable, family-friendly, and a safe community where locals can thrive.”
+        </blockquote>
+        <p style="margin-top:22px;">
+          This campaign is rooted in community, not noise. It’s about thoughtful leadership, real listening, and making decisions that work for the people who live here year-round.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container card cta-wrap">
+      <div>
+        <div class="eyebrow">Get Involved</div>
+        <h2>Join the campaign</h2>
+        <p>
+          Want to help spread the word, host a conversation, or stay updated? Reach out and be part of building a stronger future for Silverthorne.
+        </p>
+      </div>
+
+      <div class="cta-side">
+        <div style="margin-bottom:16px;">
+          <div class="label">Email</div>
+          <div><a class="email" href="mailto:chandler.morehardt@gmail.com">chandler.morehardt@gmail.com</a></div>
+        </div>
+
+        <div style="margin-bottom:16px;">
+          <div class="label">Community</div>
+          <div>Silverthorne, Colorado</div>
+        </div>
+
+        <div style="margin-bottom:20px;">
+          <div class="label">Volunteer Opportunities</div>
+          <div>Neighborhood outreach, campaign events, digital support, and more.</div>
+        </div>
+
+        <div class="button-row" style="margin-top:0;">
+          <a class="btn btn-primary" href="mailto:chandler.morehardt@gmail.com?subject=Volunteer%20for%20the%20Campaign">Volunteer</a>
+          <a class="btn btn-secondary" href="mailto:chandler.morehardt@gmail.com?subject=Campaign%20Contact">Contact the Campaign</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Paid for by friends of Chandler Morehardt
+  </footer>
+</body>
+</html>
